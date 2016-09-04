@@ -48,6 +48,7 @@
     <Compile Include="World\Tile.cs" />
     <Compile Include="World\Level.cs" />
     <Compile Include="World\World.cs" />
+    <Compile Include="FrameBuffer.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
