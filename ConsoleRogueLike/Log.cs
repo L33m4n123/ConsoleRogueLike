@@ -26,68 +26,66 @@
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 using System;
+using System.Collections.Generic;
 
 namespace ConsoleRogueLike
 {
-    public class LivingEntity : Entity
+    /// <summary>
+    /// Keeps a Log of all the Events that happened, so you can
+    /// go back and read them like a diary. However it'll only
+    /// display the last ~3 (Subject to change upon building the Game Screen)
+    /// Messages on your Screen in the Main game Screen
+    /// </summary>
+    public class Log
     {
+        
+        #region private Fields
+        static Log _instance;
+        List<String> _logList;
+        #endregion
 
-        #region Parameters
+        #region
 
-        public Faction Faction { get; set; }
-
-        public float Hitpoints 
-        { 
+        public static Log Instance
+        {
             get
             {
-                return this._hitpoints;
-            }
-            set
-            {
-                this._hitpoints = value;
-                if (this._hitpoints <= 0)
-                {
-                    this.Die();
-                }
+                if (_instance == null)
+                    _instance = new Log();
+                return _instance;
             }
         }
 
-
-        // For Combat
-        public float Damage { get; set; }
-        public float Armor { get; set; }
-        public float ViewRange { get; set; }
+        public List<String> LogList
+        {
+            get
+            {
+                return this._logList;
+            }                
+        }
 
         #endregion
 
-        #region private fields
-        float _hitpoints;
-        #endregion
-
-        public LivingEntity(String name, String desc, Chixel chixel, float hp, Faction faction, float damage = 1.0f, float armor = 1.0f, float viewRange = 1.0f) : base(name, desc, chixel)
+        public Log()
         {
-            this.Hitpoints = hp;
-            this.Faction = faction;
-            this.Damage = damage;
-            this.Armor = armor;
-            this.ViewRange = viewRange;
+            // TODO: initialize the log
+            this._logList = new List<String>();
         }
 
-        public void TakeDamage(float ammount)
+        public void AddLog(String log)
         {
-            if ((ammount - this.Armor) < 1)
-            {
-                ammount = 1;
-            }
-
-            this.Hitpoints = this.Hitpoints - ammount;
+            _logList.Add(log);
         }
 
-        public void Die()
+        public List<String> GetCompleteLog()
         {
-            // TODO: Take care of Death of the Entity
+            return _logList;
         }
 
+        public List<String> GetLastEntrys(int ammount)
+        {
+            return _logList.GetRange(_logList.Count - ammount, ammount);
+        }
     }
 }
 

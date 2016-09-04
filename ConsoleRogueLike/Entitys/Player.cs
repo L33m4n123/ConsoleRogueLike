@@ -29,65 +29,37 @@ using System;
 
 namespace ConsoleRogueLike
 {
-    public class LivingEntity : Entity
+    public class Player : LivingEntity
     {
 
-        #region Parameters
+        #region Properties
 
-        public Faction Faction { get; set; }
-
-        public float Hitpoints 
+        public double Currency 
         { 
             get
             {
-                return this._hitpoints;
+                return _currency;
             }
             set
             {
-                this._hitpoints = value;
-                if (this._hitpoints <= 0)
+                if (value < 0)
                 {
-                    this.Die();
+                    throw new Exception("You should never get negative ammount of cash O_O");
                 }
+                this._currency = Math.Max(0, value);
             }
         }
-
-
-        // For Combat
-        public float Damage { get; set; }
-        public float Armor { get; set; }
-        public float ViewRange { get; set; }
 
         #endregion
 
         #region private fields
-        float _hitpoints;
+        double _currency = 0.0D;
         #endregion
 
-        public LivingEntity(String name, String desc, Chixel chixel, float hp, Faction faction, float damage = 1.0f, float armor = 1.0f, float viewRange = 1.0f) : base(name, desc, chixel)
+        public Player(String name, String desc, Chixel chix, float hp, Faction faction = Faction.Player) : base(name, desc, chix, hp, faction)
         {
-            this.Hitpoints = hp;
-            this.Faction = faction;
-            this.Damage = damage;
-            this.Armor = armor;
-            this.ViewRange = viewRange;
+            
         }
-
-        public void TakeDamage(float ammount)
-        {
-            if ((ammount - this.Armor) < 1)
-            {
-                ammount = 1;
-            }
-
-            this.Hitpoints = this.Hitpoints - ammount;
-        }
-
-        public void Die()
-        {
-            // TODO: Take care of Death of the Entity
-        }
-
     }
 }
 

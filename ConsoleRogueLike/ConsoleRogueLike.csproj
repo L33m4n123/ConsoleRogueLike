@@ -41,6 +41,8 @@
     <Compile Include="Entitys\Faction.cs" />
     <Compile Include="Entitys\LivingEntity.cs" />
     <Compile Include="GameManager.cs" />
+    <Compile Include="Entitys\Player.cs" />
+    <Compile Include="Log.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

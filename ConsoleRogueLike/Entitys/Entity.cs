@@ -40,8 +40,6 @@ namespace ConsoleRogueLike
             this.Name = name;
             this.Description = desc;
             this.Chixel = chixel;
-
-            Console.Write("Ja so funktioniert das^^");
         }
     }
 }

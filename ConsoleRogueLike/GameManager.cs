@@ -38,6 +38,18 @@ namespace ConsoleRogueLike
     public static class GameManager
     {
         // TODO: Think about implementing perma stats?
+
+        /// <summary>
+        /// Gets or sets the player.
+        /// </summary>
+        /// <value>The player.</value>
+        public static Player Player { get; set; }
+
+        /// <summary>
+        /// Gets or sets the log-Object.
+        /// </summary>
+        /// <value>The log-Object.</value>
+        public static Log Log { get; set; }
     }
 }
 
