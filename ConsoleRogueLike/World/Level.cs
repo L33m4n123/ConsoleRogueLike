@@ -25,34 +25,24 @@
 //  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
-
 using System;
-using System.Threading;
+using System.Collections.Generic;
 
 namespace ConsoleRogueLike
 {
     /// <summary>
-    /// Programm.
+    /// Level.
     /// 
-    /// Main entry point for my Programm
+    /// Every World consists out of Levels
     /// </summary>
-    class Programm
+    public class Level
     {
 
-        public static LivingEntity Test {get; set; }
-        public static void Main(string[] args)
-        {
-            Game game = Game.Instance;
-            while (game.IsRunning)
-            {
-                Thread.Sleep(20); // No need to overload the CPU. 
-                if (Test == null)
-                {
-                    Test = new LivingEntity("Test Entity", "Test Description", null, 20, Faction.Neutral);
-                }
+        public List<Floor> Floors { get; set; }
 
-                InputHandler.ReadInput();
-            }
+        public Level()
+        {
         }
     }
 }
+

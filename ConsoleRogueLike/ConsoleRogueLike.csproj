@@ -44,9 +44,14 @@
     <Compile Include="Entitys\Player.cs" />
     <Compile Include="Log.cs" />
     <Compile Include="InputHandler.cs" />
+    <Compile Include="World\Floor.cs" />
+    <Compile Include="World\Tile.cs" />
+    <Compile Include="World\Level.cs" />
+    <Compile Include="World\World.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Entitys\" />
+    <Folder Include="World\" />
   </ItemGroup>
 </Project>
