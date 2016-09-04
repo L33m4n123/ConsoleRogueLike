@@ -29,6 +29,11 @@ using System;
 
 namespace ConsoleRogueLike
 {
+    /// <summary>
+    /// Entity.
+    /// 
+    /// Class to deal with all the stuff all Entitys need in the Game
+    /// </summary>
     public class Entity
     {
         public String Name { get; set; }

@@ -29,6 +29,11 @@ using System;
 
 namespace ConsoleRogueLike
 {
+    /// <summary>
+    /// Living entity.
+    /// 
+    /// Deals everything every living Entity needs in the game
+    /// </summary>
     public class LivingEntity : Entity
     {
 

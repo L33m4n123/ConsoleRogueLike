@@ -31,6 +31,11 @@ using System.Threading;
 
 namespace ConsoleRogueLike
 {
+    /// <summary>
+    /// Programm.
+    /// 
+    /// Main entry point for my Programm
+    /// </summary>
     class Programm
     {
 
@@ -40,14 +45,16 @@ namespace ConsoleRogueLike
             Game game = Game.Instance;
             while (game.IsRunning)
             {
-                //Console.Write("So. Spiel läuft. Und nun?");
-                Thread.Sleep(10); // No need to overload the CPU. 
+                Thread.Sleep(20); // No need to overload the CPU. 
                 if (Test == null)
                 {
                     Test = new LivingEntity("Test Entity", "Test Description", null, 20, Faction.Neutral);
                 }
 
+                InputHandler.ReadInput();
             }
+
+
         }
     }
 }

@@ -30,6 +30,8 @@ using System;
 namespace ConsoleRogueLike
 {
     /// <summary>
+    /// GameManager
+    /// 
     /// Used to Manage some neccesary stuff.
     /// Like keep a list of all Entitys in the level
     /// Keep track of Player Stats
@@ -50,6 +52,15 @@ namespace ConsoleRogueLike
         /// </summary>
         /// <value>The log-Object.</value>
         public static Log Log { get; set; }
+
+        /// <summary>
+        /// Gets or sets the entitys.
+        /// 
+        /// Used to keep track of all the Entitys on the Screen that
+        /// are NOT the Player
+        /// </summary>
+        /// <value>The entitys.</value>
+        public static Entity[] Entitys { get; set; }
     }
 }
 

@@ -31,6 +31,8 @@ using System.Collections.Generic;
 namespace ConsoleRogueLike
 {
     /// <summary>
+    /// Log
+    /// 
     /// Keeps a Log of all the Events that happened, so you can
     /// go back and read them like a diary. However it'll only
     /// display the last ~3 (Subject to change upon building the Game Screen)

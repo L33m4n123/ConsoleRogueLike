@@ -29,10 +29,58 @@ using System;
 
 namespace ConsoleRogueLike
 {
-    public class InputHandler
+    /// <summary>
+    /// Input handler.
+    /// 
+    /// Used to manage all the Input thew user does.
+    /// </summary>
+    public static class InputHandler
     {
-        public InputHandler()
+        public static void ReadInput()
         {
+            if (Console.KeyAvailable)
+            {
+                ConsoleKeyInfo pressedKey = Console.ReadKey(true);
+
+                if ((pressedKey.Modifiers & ConsoleModifiers.Control) != 0)
+                {
+                    if (pressedKey.Key == ConsoleKey.Q)
+                        Game.Instance.IsRunning = false;
+                }
+                else
+                {
+                    switch (pressedKey.Key)
+                    {
+                        case ConsoleKey.W:
+                        case ConsoleKey.UpArrow:
+                            {
+                                Console.WriteLine("The Player would move up by one tile");
+                                break;
+                            }
+                        case ConsoleKey.S:
+                        case ConsoleKey.DownArrow:
+                            {
+                                Console.WriteLine("The Player would walk down by one tile");
+                                break;
+                            }
+                        case ConsoleKey.A: 
+                        case ConsoleKey.LeftArrow:
+                            {
+                                Console.WriteLine("The Player would walk one tile to the left");
+                                break;
+                            }
+                        case ConsoleKey.D: 
+                        case ConsoleKey.RightArrow:
+                            {
+                                Console.WriteLine("The Player would walk one tile to the right");
+                                break;
+                            }
+                    }
+                }
+
+                // Debug Purposes
+                //Console.WriteLine("Key:" + pressedKey.Key + "  KeyChar:" + pressedKey.KeyChar);
+            }
         }
     }
 }

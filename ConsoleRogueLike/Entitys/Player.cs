@@ -29,6 +29,11 @@ using System;
 
 namespace ConsoleRogueLike
 {
+    /// <summary>
+    /// Player.
+    /// 
+    /// Information relevant to the Player-Character
+    /// </summary>
     public class Player : LivingEntity
     {
 

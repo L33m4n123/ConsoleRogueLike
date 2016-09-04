@@ -29,7 +29,16 @@ using System;
 
 namespace ConsoleRogueLike
 {
-    // Name Idea blatanly copied from Quill18. Ch(aracter p)ixel
+    /// <summary>
+    /// Chixel.
+    /// 
+    /// Name Idea blatanly copied from Quill18. 
+    /// Ch(aracter p)ixel
+    /// 
+    /// This is used to represent everything on the screen.
+    /// It uses a different class as there will be the need
+    /// for the usage of different colors
+    /// </summary>
     public class Chixel
     {
         char _character;

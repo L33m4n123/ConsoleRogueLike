@@ -29,6 +29,12 @@ using System;
 
 namespace ConsoleRogueLike
 {
+    /// <summary>
+    /// Game.
+    /// 
+    // TODO: Do I really need this class or is it just wasted space
+    // creating a new Object for something I do not use?
+    /// </summary>
     public class Game
     {
         static Game _instance;

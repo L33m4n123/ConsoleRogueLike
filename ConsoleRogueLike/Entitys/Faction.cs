@@ -29,6 +29,11 @@ using System;
 
 namespace ConsoleRogueLike
 {
+    /// <summary>
+    /// Faction.
+    /// 
+    /// What Faction does the Entity represent?
+    /// </summary>
     public enum Faction
     {
         Enemy,
