@@ -27,7 +27,7 @@
 //
 using System;
 
-namespace ConsoleRogueLike
+namespace ConsoleGame
 {
     /// <summary>
     /// Tile.

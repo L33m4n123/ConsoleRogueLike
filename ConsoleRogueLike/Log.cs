@@ -28,7 +28,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace ConsoleRogueLike
+namespace ConsoleGame
 {
     /// <summary>
     /// Log

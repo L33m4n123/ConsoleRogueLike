@@ -29,7 +29,7 @@
 using System;
 using System.Threading;
 
-namespace ConsoleRogueLike
+namespace ConsoleGame
 {
     /// <summary>
     /// Programm.
