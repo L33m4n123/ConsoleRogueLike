@@ -38,8 +38,20 @@ namespace ConsoleGame
     public class Floor
     {
         public List<Tile> Tiles { get; set; }
-        public Floor()
+        public int Width { get; set; }
+        public int Height { get; set; }
+
+        public Floor(int width, int height)
         {
+            this.Width = width;
+            this.Height = height;
+            for (int x = 0; x < this.Width; x++)
+            {
+                for (int y = 0; y < this.Height; y++)
+                {
+                    Tiles.Add(new Tile(x, y));
+                }
+            }
         }
     }
 }

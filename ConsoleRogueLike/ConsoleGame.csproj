@@ -8,6 +8,7 @@
     <RootNamespace>ConsoleRogueLike</RootNamespace>
     <AssemblyName>ConsoleRogueLike</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <ApplicationManifest>Menus.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -49,10 +50,12 @@
     <Compile Include="World\Level.cs" />
     <Compile Include="World\World.cs" />
     <Compile Include="FrameBuffer.cs" />
+    <Compile Include="Menus\Menu.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Entitys\" />
     <Folder Include="World\" />
+    <Folder Include="Menus\" />
   </ItemGroup>
 </Project>

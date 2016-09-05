@@ -39,8 +39,10 @@ namespace ConsoleGame
         public int X { get; set; }
         public int Y { get; set; }
 
-        public Tile()
+        public Tile(int x, int y)
         {
+            this.X = x;
+            this.Y = y;
         }
     }
 }

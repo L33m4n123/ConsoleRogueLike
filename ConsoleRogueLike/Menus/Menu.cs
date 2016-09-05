@@ -26,67 +26,45 @@
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 using System;
-using System.Collections.Generic;
-
 namespace ConsoleGame
 {
     /// <summary>
-    /// Log
+    /// Menu.
     /// 
-    /// Keeps a Log of all the Events that happened, so you can
-    /// go back and read them like a diary. However it'll only
-    /// display the last ~3 (Subject to change upon building the Game Screen)
-    /// Messages on your Screen in the Main game Screen
+    /// Do I need to make each possible Menu an object or just a function within this Class that gets initialized upon game start?
     /// </summary>
-    public class Log
+    public class Menu
     {
-        
-        #region private Fields
-        static Log _instance;
-        List<String> _logList;
-        #endregion
-
-        #region properties
-
-        public static Log Instance
+        public Menu ()
         {
-            get
+            Instantiate ("MainMenu", "Options");
+        }
+
+        void Instantiate (params String[] menus)
+        {
+            foreach (String menu in menus)
             {
-                if (_instance == null)
-                    _instance = new Log();
-                return _instance;
+                //TODO: Add Menu in a Dictionary or smth simliar to call them when neccesary
+                //TODO: Shall I do a new Class for each? And change this class name to MenuHandler or smth simliar?
+                switch (menu)
+                {
+                    case "MainMenu":
+                    {
+                        // TODO: Instantiate Main Menu!
+                        break;
+                    }
+                    case "Options":
+                    {
+                        //TODO: Instantiate Options Menu!
+                        break;
+                    }
+                }
             }
         }
 
-        public List<String> LogList
+        public void DisplayMenu()
         {
-            get
-            {
-                return this._logList;
-            }                
-        }
-
-        #endregion
-
-        public Log()
-        {
-            // TODO: initialize the log
-            this._logList = new List<String>();
-        }
-
-        public void AddLog(String log)
-        {
-            _logList.Add(log);
-        }
-
-        public List<String> GetCompleteLog()
-        {
-            return _logList;
-        }
-
-        public List<String> GetLastEntrys(int ammount)
-        {
-            return _logList.GetRange(_logList.Count - ammount, ammount);
+            // TODO: Send relevant Data to FrameBuffer-Class
         }
     }
 }

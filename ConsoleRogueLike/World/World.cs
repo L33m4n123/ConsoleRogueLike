@@ -26,11 +26,14 @@
 //  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 //
 using System;
+using System.Collections.Generic;
 
 namespace ConsoleGame
 {
     public class World
     {
+
+        public Dictionary<String, Level> Levels { get; set; }
         public World()
         {
         }

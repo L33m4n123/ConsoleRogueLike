@@ -38,19 +38,14 @@ namespace ConsoleGame
     /// </summary>
     class Programm
     {
-
-        public static LivingEntity Test {get; set; }
         public static void Main(string[] args)
         {
             Game game = Game.Instance;
             while (game.IsRunning)
             {
                 Thread.Sleep(20); // No need to overload the CPU. 
-                if (Test == null)
-                {
-                    Test = new LivingEntity("Test Entity", "Test Description", null, 20, Faction.Neutral);
-                }
 
+                //TODO: Instantiate all relevant Pre-Game Stuff. World, Menus, Settings
                 InputHandler.ReadInput();
             }
         }

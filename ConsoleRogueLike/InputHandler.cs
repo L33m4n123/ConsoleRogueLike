@@ -46,6 +46,9 @@ namespace ConsoleGame
                 {
                     if (pressedKey.Key == ConsoleKey.Q)
                         Game.Instance.IsRunning = false;
+                    //TODO: Find a way to allow CTRL + C anyways
+                    if (pressedKey.Key == ConsoleKey.C)
+                        Console.Clear();
                 }
                 else
                 {
